@@ -13,7 +13,7 @@ I recently discovered a very cool method to connect to my Pis, that doesn't requ
 
 In its simplest form, you connect **GROUND RXD0 TXD0** pins as follows:
 
-<img src="https://raw.githubusercontent.com/vintagefuture/pi-serial-connection/main/pi2-pinout.jpg" width="500">
+![](/assets/img/pi2-pinout.jpg)
 
 On a Linux terminal, make sure you have `screen` installed, then run:
 
@@ -24,6 +24,6 @@ sudo screen /dev/ttyUSB0 115200
 where /dev/ttyUSB0 is the particular device I'm using, a FT232RL USB to TTL Serial Interface Adapter:
 
 
-<img src="https://github.com/vintagefuture/pi-serial-connection/blob/main/FT232RL-diagram.jpg">
+![](/assets/img/FT232RL-diagram.jpg)
 
-<img src="https://github.com/vintagefuture/pi-serial-connection/blob/main/FT232RL.jpg" width="500">
+![](/assets/img/FT232RL.jpg)
