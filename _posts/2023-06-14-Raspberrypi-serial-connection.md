@@ -4,7 +4,6 @@ title: How to connect to your Raspberry Pi using the serial port
 date: 2023-06-14 20:19
 categories: [tech]
 tags: [raspberrypi]
-author: vintagefuture
 ---
 
 # pi-serial-connection

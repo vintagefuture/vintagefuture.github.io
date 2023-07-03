@@ -3,7 +3,6 @@ layout: post
 title: Migrating Gerrit plugins to new  UI - Part 1
 date: 2023-06-13 10:21
 category: devops tales
-author:
 tags: [blog, javascript, gerrit, devops, git]
 summary:
 ---
