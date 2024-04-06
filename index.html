@@ -4,8 +4,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Flexbox Navbar</title>
+  <title>Random quote generator</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,31 +19,29 @@
     <li><a href="/authors.html">Authors</a></li>
     <li><a href="/bonus.html">Bonus</a></li>
   </ul>
-  <div class="card">
-    <div class="card-body">
+  <div class="quote">
+    <div class="quote-body">
       <blockquote class="blockquote mb-0">
-        <p>loading...</p>
+        <p id="quote">loading...</p>
         <footer class="blockquote-footer">
-          <cite title="Source Title"></cite>
+          <cite id="author"></cite>
         </footer>
       </blockquote>
     </div>
-    <div class="card-footer">
-      <button class="btn btn-primary">New Quote
+    <div class="quote-footer">
+      <button class="quote-button">New Quote
     </div>
   </div>
   </div>
-  <audio controls>
-    <source src="./media/gymnopedies1.ogg" type="audio/ogg">
-  </audio>
+  <footer>
+    <audio controls>
+      <source src="./media/gymnopedies1.ogg" type="audio/ogg">
+    </audio>
+  </footer>
+
 </body>
 <br>
 
-<iframe id=player src="https://open.spotify.com/embed/show/1DEV8QhFqA8xA8l9hstYM5?utm_source=generator" frameBorder="0"
-  allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-  loading="lazy">
-</iframe>
-
-<script src="script.js"></script>
+<script src="get-quote.js"></script>
 
 </html>
