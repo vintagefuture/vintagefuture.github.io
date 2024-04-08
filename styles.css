@@ -16,7 +16,7 @@
 }
 
 .navigation a:hover {
-  background: darken(tomato, 2%);
+  background: darken(rgb(162, 158, 158), 2%);
 }
 
 @media all and (max-width: 800px) {
@@ -25,7 +25,7 @@
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 900px) {
   .navigation {
     flex-flow: column wrap;
     padding: 0;
@@ -52,22 +52,20 @@ body {
   height: 100vh;
   margin: 0;
 }
-.quote {
-  width: 80%;
-  max-width: 700px;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin: 2rem;
-  margin-bottom: 15rem;
-}
 
 .quote-body {
   padding: 20px;
 }
 
-#player {
-  border-radius: 12px;
+.quote {
   width: 80%;
+  max-width: 700px;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  margin: 2rem;
+  margin-bottom: 15rem;
+  position: absolute;
+  top: 150px;
 }
 
 .quote-button {
@@ -82,30 +80,14 @@ body {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  position: absolute;
+  top: 250px;
 }
 
 .quote-footer {
   display: flex;
   justify-content: center;
   padding: 20px;
-}
-
-.cardo-regular {
-  font-family: "Cardo", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.cardo-bold {
-  font-family: "Cardo", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.cardo-regular-italic {
-  font-family: "Cardo", serif;
-  font-weight: 400;
-  font-style: italic;
 }
 
 #quote {
@@ -117,4 +99,44 @@ body {
   font-family: "Cardo", serif;
   font-weight: 400;
   font-style: bold;
+}
+
+.categories {
+  display: block;
+}
+
+.navbar {
+  position: absolute;
+  top: 50px;
+  margin-bottom: 4rem;
+}
+
+#player {
+  border-radius: 12px;
+  width: 80%;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; /* Footer height */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.column {
+  width: 33.33%;
+  /* Adjust the width according to your preference */
+  padding: 1px;
+  box-sizing: border-box;
+}
+
+#columnsContainer {
+  width: 500px;
+  height: 500px;
 }
