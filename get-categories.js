@@ -1,7 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
   // DOM elements
+  const categoryDropdown = document.getElementById("categoryDropdown");
+  const generateQuoteBtn = document.getElementById("generateQuoteBtn");
+  const quote = document.querySelector("blockquote p");
+  const cite = document.querySelector("blockquote cite");
 
-  async function getCategories() {
+  async function updateQuote() {
+    const category = categoryDropdown.value;
+    // Fetch a random quote for the selected category
+    const response = await fetch(
+      `https://api.quotable.io/random?tags=${category}`
+    );
+    const data = await response.json();
+    if (response.ok) {
+      // Update DOM elements
+      quote.textContent = data.content;
+      cite.textContent = data.author;
+    } else {
+      quote.textContent = "An error occurred";
+      console.log(data);
+    }
+  }
+
+  async function populateDropdown() {
     try {
       // Fetch the list of categories from the Quotable API
       const response = await fetch(
@@ -10,32 +31,29 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Extract category names and join them into a string
-        const categoryNames = data.map((category) => capitalize(category.name));
-        // Update DOM element with the category names
-        createColumnsFromArray(categoryNames);
+        // Extract category names and populate the dropdown menu
+        data.forEach((category) => {
+          const option = document.createElement("option");
+          option.value = category.name;
+          option.textContent = capitalize(category.name);
+          categoryDropdown.appendChild(option);
+        });
       } else {
-        categories.textContent = "An error occurred";
-        console.log(data);
+        console.error(data);
       }
     } catch (error) {
-      categories.textContent = "An error occurred";
       console.error(error);
     }
-
-    function createColumnsFromArray(array) {
-      var columnsContainer = document.getElementById("columnsContainer");
-
-      array.forEach(function (element) {
-        var columnDiv = document.createElement("div");
-        columnDiv.classList.add("column");
-        columnDiv.textContent = element;
-        columnsContainer.appendChild(columnDiv);
-      });
-    }
   }
-  // call getCategories once when page loads
-  getCategories();
+
+  // Attach event listener to the dropdown for change event
+  categoryDropdown.addEventListener("change", updateQuote);
+
+  // Attach event listener to the button for click event
+  generateQuoteBtn.addEventListener("click", updateQuote);
+
+  // call populateDropdown once when page loads
+  populateDropdown();
 });
 
 const capitalize = (word) => {

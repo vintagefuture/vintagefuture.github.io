@@ -140,3 +140,13 @@ body {
   width: 500px;
   height: 500px;
 }
+
+.audio-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+audio {
+  margin: 20px 0;
+}
