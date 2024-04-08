@@ -7,7 +7,7 @@
   justify-content: flex-end;
 }
 
-.navigation a {
+.navbar .navigation a {
   text-decoration: none;
   display: block;
   padding: 1em;
@@ -16,7 +16,7 @@
 }
 
 .navigation a:hover {
-  background: darken(rgb(162, 158, 158), 2%);
+  background: darken(rgb(162, 158, 158), 20%);
 }
 
 @media all and (max-width: 800px) {
@@ -149,4 +149,11 @@ body {
 
 audio {
   margin: 20px 0;
+}
+
+.w3-bar {
+  position: absolute;
+  top: 30px;
+  margin-bottom: 4rem;
+  max-width: 1000px;
 }
