@@ -10,7 +10,7 @@
 
 <body>
     <nav class="navbar">
-        <ul class="navigation">
+        <ul>
             <li><a href="featured.html">Featured</a></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="categories.html">Categories</a></li>
@@ -19,7 +19,15 @@
             <li><a href="about-us.html">About us</a></li>
         </ul>
     </nav>
-    <p>Authors!</p>
+
+    <div>
+        <select id="authors">
+            <!-- Authors options will be dynamically added here -->
+        </select>
+        <button id="generateQuoteBtn">Generate Quote</button>
+    </div>
+
 </body>
+<script src="get-authors.js"></script>
 
 </html>
