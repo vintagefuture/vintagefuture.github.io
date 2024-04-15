@@ -1,9 +1,9 @@
-const button = document.querySelector("button");
-const quote = document.querySelector("blockquote p");
-const cite = document.querySelector("blockquote cite");
+const dadJokeButton = document.getElementById("dad-joke-button");
+const dadJoke = document.getElementById("dad-joke");
 
-async function updateQuote() {
+async function getDadJokeQuote() {
     fetch("https://icanhazdadjoke.com/", {
+        method: "GET",
         headers: {
             Accept: "application/json",
         },
@@ -16,7 +16,7 @@ async function updateQuote() {
         })
         .then((data) => {
             // Data will contain the random joke
-            quote.textContent = data.joke;
+            dadJoke.textContent = data.joke;
             console.log(data.joke);
         })
         .catch((error) => {
@@ -27,5 +27,5 @@ async function updateQuote() {
         });
 }
 
-// Attach an event listener to the `button`
-button.addEventListener("click", updateQuote);
+// Attach an event listener to dadJokeButton
+dadJokeButton.addEventListener("click", getDadJokeQuote);

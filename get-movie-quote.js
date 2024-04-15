@@ -1,40 +1,33 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // DOM elements
-    const button = document.querySelector("button");
-    const quote = document.querySelector("blockquote p");
-    const cite = document.querySelector("blockquote cite");
+const movieQuoteParagraph = document.getElementById("movie-quote");
+const quoteFromFooter = document.getElementById("quoteFrom");
+const movieQuoteButton = document.getElementById("movie-quote-button");
 
-    async function updateQuote() {
-        const url =
-            "https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/random/quote";
-        const options = {
-            method: "GET",
-            headers: {
-                "X-RapidAPI-Key":
-                    "21bc052652msh29e5d448cb9a74cp1e9610jsn4838a37cd1a6",
-                "X-RapidAPI-Host": "movie-and-tv-shows-quotes.p.rapidapi.com",
-            },
-        };
+async function getMovieQuote() {
+    const url =
+        "https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/random/quote";
+    const options = {
+        method: "GET",
+        headers: {
+            "X-RapidAPI-Key":
+                "36f4fc788emsh2ff407b3cec6a59p1ef96cjsnf9418516d502",
+            "X-RapidAPI-Host": "movie-and-tv-shows-quotes.p.rapidapi.com",
+        },
+    };
 
-        // Fetch a random quote from the Quotable API
-        const response = await fetch(url, options);
-
-        // Parse the response
-        const data = await response.text();
-
-        if (response.ok) {
-            // Update DOM elements
-            quote.textContent = data.content;
-            cite.textContent = data.author;
-        } else {
-            quote.textContent = "An error occured";
-            console.log(data);
-        }
+    try {
+        const movieQuoteResult = await fetch(url, options);
+        const movie = await movieQuoteResult.json();
+        movieQuoteParagraph.textContent = movie.quote;
+        quoteFromFooter.innerHTML = `${"<i>" + movie.actor + "</i>"} in ${
+            "<i>" + movie.quoteFrom + "</i>"
+        }`;
+        console.log("quote: ", movie.quote);
+        console.log("movie: ", movie.quoteFrom);
+        console.log("actor: ", movie.actor);
+    } catch (error) {
+        console.error(error);
     }
+}
 
-    // Attach an event listener to the `button`
-    button.addEventListener("click", updateQuote);
-
-    // call updateQuote once when page loads
-    updateQuote();
-});
+// Attach an event listener to movieQuoteButton
+movieQuoteButton.addEventListener("click", getMovieQuote);

@@ -1,196 +1,208 @@
 body {
-  min-height: 100vh;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to bottom, #e0e0e0, #999999);
-  background-color: #999999;
-  height: 100vh;
-  margin: 0;
-  font-family: "Cardo", serif;
-  font-size: 25px;
-  line-height: 1.5;
-}
-
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  background: rgb(83, 84, 89);
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: #f1f1f1 !important;
-  color: #000 !important;
-}
-
-.navbar ul a {
-  text-decoration: none;
-  display: block;
-  color: black;
-  padding-top: 8px;
-  padding-right: 16px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-}
-
-.navbar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar ul a:hover {
-  background-color: #ccc !important;
-}
-
-@media all and (max-width: 900px) {
-  body {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    align-items: center;
     justify-content: center;
-    vertical-align: middle;
     background: linear-gradient(to bottom, #e0e0e0, #999999);
     background-color: #999999;
-    /* height: 100vh; */
-    /* margin: 0; */
+    height: 100vh;
+    margin: 0;
     font-family: "Cardo", serif;
     font-size: 25px;
     line-height: 1.5;
-  }
-  .navbar {
-    display: flex;
-    vertical-align: middle;
-    left: 1em;
-    margin: 10px;
-  }
+}
 
-  .navbar ul {
-    flex-flow: column wrap;
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    background: rgb(83, 84, 89);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2),
+        0 4px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f1f1f1 !important;
+    color: #000 !important;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+}
+
+.navbar ul {
+    list-style-type: none;
     padding: 0;
-  }
-  .navbar ul a,
-  li a {
-    text-align: center;
-    padding: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .navbar li:last-of-type a {
-    border-bottom: none;
-  }
-  .quote-div {
-    position: absolute;
-    margin: 10rem;
-    max-width: 80%;
-  }
+    margin: 0;
+}
+
+.navbar ul a:hover {
+    background-color: #ccc !important;
+}
+
+@media all and (max-width: 900px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        vertical-align: middle;
+        background: linear-gradient(to bottom, #e0e0e0, #999999);
+        background-color: #999999;
+        /* height: 100vh; */
+        /* margin: 0; */
+        font-family: "Cardo", serif;
+        font-size: 25px;
+        line-height: 1.5;
+    }
+    .navbar {
+        display: flex;
+        vertical-align: middle;
+        left: 1em;
+        margin: 10px;
+    }
+
+    .navbar ul {
+        flex-flow: column wrap;
+        padding: 0;
+    }
+    .navbar ul a,
+    li a {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .navbar li:last-of-type a {
+        border-bottom: none;
+    }
+    .quote-div {
+        position: absolute;
+        margin: 10rem;
+        max-width: 80%;
+    }
 }
 
 .quote-div {
-  border-radius: 10px;
-  margin: 2rem;
-  margin-bottom: 15rem;
-  position: absolute;
-  top: 150px;
-  max-width: 50%;
+    border-radius: 10px;
+    margin: 2rem;
+    margin-bottom: 15rem;
+    position: absolute;
+    top: 150px;
+    max-width: 50%;
 }
 
 .quote-card {
-  padding: 20px;
+    padding: 20px;
 }
 
 .button {
-  background-color: rgb(83, 84, 89);
-  border-radius: 12px;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: justify;
-  text-decoration: none;
+    background-color: rgb(83, 84, 89);
+    border-radius: 12px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: justify;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .quote-button {
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  position: absolute;
-  top: 400px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    position: absolute;
+    top: 400px;
 }
 
 .quote-button-div {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 #quote {
-  font-family: "Cardo", serif;
-  font-size: 1.2em;
+    font-family: "Cardo", serif;
+    font-size: 1.2em;
 }
 
 #author {
-  margin-left: 5rem;
-  font-size: 1.6rem;
-  font-style: normal;
+    margin-left: 5rem;
+    font-size: 1.6rem;
+    font-style: normal;
 }
 
 .categories {
-  display: block;
+    display: block;
 }
 
 .navbar {
-  position: absolute;
-  top: 50px;
-  margin-bottom: 4rem;
+    position: absolute;
+    top: 50px;
+    margin-bottom: 4rem;
 }
 
 #player {
-  border-radius: 12px;
-  width: 80%;
+    border-radius: 12px;
+    width: 80%;
 }
 
 #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
 }
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .column {
-  width: 33.33%;
-  padding: 1px;
-  box-sizing: border-box;
+    width: 33.33%;
+    padding: 1px;
+    box-sizing: border-box;
 }
 
 #columnsContainer {
-  width: 500px;
-  height: 500px;
+    width: 500px;
+    height: 500px;
 }
 
 .audio-controls {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
 }
 
 audio {
-  margin: 20px 0;
+    margin: 20px 0;
+}
+
+#bonus-main-div {
+    display: flex;
+    flex-direction: row;
 }
 
 #dad-joke-div {
+    max-width: 50%;
 }
 
 #dad-joke-card {
 }
 
 #random-movie-quote {
+    max-width: 50%;
+}
+
+#quoteFrom {
+    font-style: normal;
 }

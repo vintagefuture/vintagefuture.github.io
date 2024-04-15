@@ -5,9 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const cite = document.querySelector("blockquote cite");
 
     async function updateQuote() {
+        const url = "https://api.quotable.io/random";
+
         // Fetch a random quote from the Quotable API
-        const response = await fetch("https://api.quotable.io/random");
+        const response = await fetch(url);
+
+        // Parse response data
         const data = await response.json();
+
         if (response.ok) {
             // Update DOM elements
             quote.textContent = data.content;
