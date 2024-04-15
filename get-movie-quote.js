@@ -15,15 +15,17 @@ async function getMovieQuote() {
     };
 
     try {
-        const movieQuoteResult = await fetch(url, options);
-        const movie = await movieQuoteResult.json();
+        // const movieQuoteResult = await fetch(url, options);
+        // const movie = await movieQuoteResult.json();
+        const movie = {
+            quote: "I have a bad feeling about this...",
+            actor: "Mark Hamill",
+            quoteFrom: "Star Wars",
+        };
         movieQuoteParagraph.textContent = movie.quote;
         quoteFromFooter.innerHTML = `${"<i>" + movie.actor + "</i>"} in ${
             "<i>" + movie.quoteFrom + "</i>"
         }`;
-        console.log("quote: ", movie.quote);
-        console.log("movie: ", movie.quoteFrom);
-        console.log("actor: ", movie.actor);
     } catch (error) {
         console.error(error);
     }

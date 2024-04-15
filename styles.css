@@ -1,11 +1,12 @@
 body {
     min-height: 100vh;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     background: linear-gradient(to bottom, #e0e0e0, #999999);
     background-color: #999999;
+    background-image: url("./media/debby-hudson-LQHW1hEO3RA-unsplash.jpg");
+    background-size: cover;
     height: 100vh;
     margin: 0;
     font-family: "Cardo", serif;
@@ -16,6 +17,8 @@ body {
 .navbar ul {
     list-style: none;
     margin: 0;
+    list-style-type: none;
+    padding: 0;
     background: rgb(83, 84, 89);
     display: flex;
     flex-flow: row wrap;
@@ -36,31 +39,11 @@ body {
     padding-left: 16px;
 }
 
-.navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
 .navbar ul a:hover {
     background-color: #ccc !important;
 }
 
 @media all and (max-width: 900px) {
-    body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        vertical-align: middle;
-        background: linear-gradient(to bottom, #e0e0e0, #999999);
-        background-color: #999999;
-        /* height: 100vh; */
-        /* margin: 0; */
-        font-family: "Cardo", serif;
-        font-size: 25px;
-        line-height: 1.5;
-    }
     .navbar {
         display: flex;
         vertical-align: middle;
@@ -72,6 +55,7 @@ body {
         flex-flow: column wrap;
         padding: 0;
     }
+
     .navbar ul a,
     li a {
         text-align: center;
@@ -79,9 +63,11 @@ body {
         border-top: 1px solid rgba(255, 255, 255, 0.3);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
+
     .navbar li:last-of-type a {
         border-bottom: none;
     }
+
     .quote-div {
         position: absolute;
         margin: 10rem;
@@ -110,17 +96,22 @@ body {
     padding: 15px 32px;
     text-decoration: none;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .quote-button {
     display: inline-block;
-    font-size: 16px;
     margin: 4px 2px;
     position: absolute;
     top: 400px;
 }
 
-.quote-button-div {
+.bonus-button {
+    position: absolute;
+    top: 600px;
+}
+
+.button-div {
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -129,6 +120,7 @@ body {
 #quote {
     font-family: "Cardo", serif;
     font-size: 1.2em;
+    text-align: justify;
 }
 
 #author {
@@ -192,14 +184,11 @@ audio {
 }
 
 #dad-joke-div {
-    max-width: 50%;
-}
-
-#dad-joke-card {
+    width: 500px;
 }
 
 #random-movie-quote {
-    max-width: 50%;
+    width: 500px;
 }
 
 #quoteFrom {
@@ -233,14 +222,20 @@ audio {
 #social-media {
     display: flex;
     justify-content: space-evenly;
+    color: black;
 }
 
 #social-media a:hover {
     color: black;
+    text-decoration: none;
 }
 
-.icon-wrapper {
-    font-size: 35px;
+.icon-wrapper a i {
+    font-size: 50px;
     color: black;
     text-decoration: none;
+}
+
+.icon-wrapper a i:hover {
+    color: #858282 !important;
 }

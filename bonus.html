@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Random quote generator</title>
-        <link rel="stylesheet" href="styles.css" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
-            rel="stylesheet"
-        />
-    </head>
 
-    <body>
-        <nav class="navbar">
-            <ul class="navigation">
-                <li><a href="featured.html">Featured</a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="categories.html">Categories</a></li>
-                <li><a href="authors.html">Authors</a></li>
-                <li><a href="bonus.html">Bonus</a></li>
-                <li><a href="about-us.html">About us</a></li>
-            </ul>
-        </nav>
-        <div id="bonus-main-div">
-            <div id="dad-joke-div">
-                <div class="dad-joke-card">
-                    <blockquote class="blockquote">
-                        <p id="dad-joke">Dad jokes generator</p>
-                    </blockquote>
-                </div>
-                <div class="dad-joke-button-div">
-                    <button class="button" id="dad-joke-button">
-                        Get a dad joke
-                    </button>
-                </div>
+<head>
+    <meta charset="UTF-8" />
+    <title>Random quote generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="navigation">
+            <li><a href="featured.html">Featured</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="authors.html">Authors</a></li>
+            <li><a href="bonus.html">Bonus</a></li>
+            <li><a href="about-us.html">About us</a></li>
+        </ul>
+    </nav>
+    <div id="bonus-main-div">
+        <div id="dad-joke-div">
+            <div class="dad-joke-card">
+                <blockquote class="blockquote">
+                    <p id="dad-joke">Dad jokes generator</p>
+                </blockquote>
             </div>
-
-            <div id="movie-quote-div">
-                <div class="movie-quote-card">
-                    <blockquote class="blockquote">
-                        <p id="movie-quote">Movie quote generator</p>
-                        <footer class="blockquote-footer">
-                            <cite id="quoteFrom"></cite>
-                        </footer>
-                    </blockquote>
-                </div>
-                <div class="movie-quote-button-div">
-                    <button class="button" id="movie-quote-button">
-                        Get a movie quote
-                    </button>
-                </div>
+            <div class="button-div">
+                <button class="button bonus-button" id="dad-joke-button">
+                    Get a dad joke
+                </button>
             </div>
         </div>
-    </body>
-    <script src="get-dad-joke.js"></script>
-    <script src="get-movie-quote.js"></script>
+
+        <div id="movie-quote-div">
+            <div class="movie-quote-card">
+                <blockquote class="blockquote">
+                    <p id="movie-quote">Movie quote generator</p>
+                    <footer class="blockquote-footer">
+                        <cite id="quoteFrom"></cite>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="button-div">
+                <button class="button bonus-button" id="movie-quote-button">
+                    Get a movie quote
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="get-dad-joke.js"></script>
+<script src="get-movie-quote.js"></script>
+
 </html>
