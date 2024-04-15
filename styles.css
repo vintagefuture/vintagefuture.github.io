@@ -108,7 +108,6 @@ body {
     border: none;
     color: white;
     padding: 15px 32px;
-    text-align: justify;
     text-decoration: none;
     cursor: pointer;
 }
@@ -205,4 +204,43 @@ audio {
 
 #quoteFrom {
     font-style: normal;
+}
+
+#about-us-main-div {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+}
+
+.box {
+    width: 500px;
+    margin: 0 50px;
+}
+
+.box p {
+    text-align: justify;
+}
+
+.box h2 {
+    text-align: center;
+}
+
+#social-media {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#social-media a:hover {
+    color: black;
+}
+
+.icon-wrapper {
+    font-size: 35px;
+    color: black;
+    text-decoration: none;
 }
