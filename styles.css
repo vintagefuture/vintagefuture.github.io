@@ -110,6 +110,7 @@ body {
     text-decoration: none;
     cursor: pointer;
     font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .quote-button {
@@ -252,14 +253,13 @@ audio {
     appearance: none;
     background-color: white;
     border-radius: 12px;
-    border: solid;
-    border-width: 1px;
     color: black;
     padding: 15px 32px;
     cursor: pointer;
     font-size: 16px;
-    outline: none; /* Remove default outline */
     margin-right: 5px;
+    border: 1px solid #aaa;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Style for select dropdown arrow */
