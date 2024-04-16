@@ -21,16 +21,18 @@
         </ul>
     </nav>
 
-    <div>
-        <select id="categoryDropdown">
-            <!-- Category options will be dynamically added here -->
-        </select>
-        <button id="generateQuoteBtn" class="button">Generate Quote</button>
+    <div id="categories-main-div" class="quote-div">
+        <div id="dropdown-div">
+            <select id="categoryDropdown">
+                <!-- Category options will be dynamically added here -->
+            </select>
+            <button id="generateQuoteBtn" class="button">Generate Quote</button>
+        </div>
+        <blockquote>
+            <p class="quote"></p>
+            <cite></cite>
+        </blockquote>
     </div>
-    <blockquote>
-        <p></p>
-        <cite></cite>
-    </blockquote>
 </body>
 <script src="get-categories.js"></script>
 

@@ -116,7 +116,7 @@ body {
     min-width: auto;
 }
 
-#quote {
+.quote {
     font-family: "Cardo", serif;
     font-size: 1.2em;
     text-align: justify;
@@ -240,4 +240,38 @@ audio {
 
 #movie-quote {
     text-align: center;
+}
+
+#dropdown-div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+
+#categoryDropdown {
+    appearance: none;
+    background-color: white;
+    border-radius: 12px;
+    border: solid;
+    border-width: 1px;
+    color: black;
+    padding: 15px 32px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none; /* Remove default outline */
+    margin-right: 5px;
+}
+
+/* Style for select dropdown arrow */
+#categoryDropdown::-ms-expand {
+    display: none; /* Hide the default arrow on IE/Edge */
+}
+
+#categoryDropdown::after {
+    content: "\25BC"; /* Unicode character for the down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Ensure the arrow doesn't interfere with clicking */
 }
