@@ -90,15 +90,16 @@ body {
     width: 807px;
 }
 
-.quote-card {
-    padding: 20px;
-}
-
 .button-div {
     display: flex;
     justify-content: center;
     padding: 20px;
     margin-top: 300px;
+}
+
+.bonus-button-div {
+    display: flex;
+    justify-content: center;
 }
 
 .button {
@@ -113,14 +114,6 @@ body {
 }
 
 .quote-button {
-    display: inline-block;
-    margin: 4px 2px;
-    position: absolute;
-    top: 140px;
-    min-width: auto;
-}
-
-.bonus-button {
     display: inline-block;
     margin: 4px 2px;
     position: absolute;
@@ -187,16 +180,13 @@ audio {
 #bonus-main-div {
     display: flex;
     justify-content: space-between;
+    position: absolute;
+    top: 140px;
 }
 
-#dad-joke-div {
-}
-
-#random-movie-quote {
-}
-
-#quoteFrom {
+.blockquote-footer {
     font-style: normal;
+    text-align: center;
 }
 
 #about-us-main-div {
@@ -242,4 +232,17 @@ audio {
 
 .icon-wrapper a i:hover {
     color: #858282 !important;
+}
+
+.bonus-div {
+    width: 700px;
+    margin-top: 250px;
+}
+
+#dad-joke {
+    text-align: center;
+}
+
+#movie-quote {
+    text-align: center;
 }
