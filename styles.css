@@ -82,7 +82,6 @@ body {
 }
 
 .quote-div {
-    border-radius: 10px;
     margin: 2rem;
     margin-bottom: 15rem;
     position: absolute;
@@ -93,13 +92,13 @@ body {
 .button-div {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    margin-top: 300px;
+    margin-bottom: 10%;
 }
 
 .bonus-button-div {
     display: flex;
     justify-content: center;
+    margin-bottom: 20%;
 }
 
 .button {
@@ -114,10 +113,6 @@ body {
 }
 
 .quote-button {
-    display: inline-block;
-    margin: 4px 2px;
-    position: absolute;
-    top: 140px;
     min-width: auto;
 }
 
@@ -181,7 +176,7 @@ audio {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top: 140px;
+    top: 192px;
 }
 
 .blockquote-footer {
@@ -235,8 +230,8 @@ audio {
 }
 
 .bonus-div {
-    width: 700px;
-    margin-top: 250px;
+    width: 450px;
+    margin: 2rem;
 }
 
 #dad-joke {
