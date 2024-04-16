@@ -14,6 +14,12 @@ body {
     line-height: 1.5;
 }
 
+.navbar {
+    position: absolute;
+    top: 50px;
+    margin-bottom: 4rem;
+}
+
 .navbar ul {
     list-style: none;
     margin: 0;
@@ -80,12 +86,19 @@ body {
     margin: 2rem;
     margin-bottom: 15rem;
     position: absolute;
-    top: 150px;
-    max-width: 50%;
+    top: 192px;
+    width: 807px;
 }
 
 .quote-card {
     padding: 20px;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 300px;
 }
 
 .button {
@@ -103,24 +116,23 @@ body {
     display: inline-block;
     margin: 4px 2px;
     position: absolute;
-    top: 400px;
+    top: 140px;
+    min-width: auto;
 }
 
 .bonus-button {
+    display: inline-block;
+    margin: 4px 2px;
     position: absolute;
-    top: 600px;
-}
-
-.button-div {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+    top: 140px;
+    min-width: auto;
 }
 
 #quote {
     font-family: "Cardo", serif;
     font-size: 1.2em;
     text-align: justify;
+    min-width: 400px;
 }
 
 #author {
@@ -131,12 +143,6 @@ body {
 
 .categories {
     display: block;
-}
-
-.navbar {
-    position: absolute;
-    top: 50px;
-    margin-bottom: 4rem;
 }
 
 #player {
@@ -180,15 +186,13 @@ audio {
 
 #bonus-main-div {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
 }
 
 #dad-joke-div {
-    width: 500px;
 }
 
 #random-movie-quote {
-    width: 500px;
 }
 
 #quoteFrom {

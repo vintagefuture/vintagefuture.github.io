@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Random quote generator</title>
-        <link rel="stylesheet" href="styles.css" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Cardo&display=swap"
-            rel="stylesheet"
-        />
-    </head>
 
-    <body>
-        <nav class="navbar">
-            <ul class="navigation">
-                <li><a href="featured.html">Featured</a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="categories.html">Categories</a></li>
-                <li><a href="authors.html">Authors</a></li>
-                <li><a href="bonus.html">Bonus</a></li>
-                <li><a href="about-us.html">About us</a></li>
-            </ul>
-        </nav>
+<head>
+    <meta charset="UTF-8" />
+    <title>Random quote generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&display=swap" rel="stylesheet" />
+</head>
 
-        <div>
-            <select id="categoryDropdown">
-                <!-- Category options will be dynamically added here -->
-            </select>
-            <button id="generateQuoteBtn">Generate Quote</button>
-        </div>
-        <blockquote>
-            <p></p>
-            <cite></cite>
-        </blockquote>
-    </body>
-    <script src="get-categories.js"></script>
+<body>
+    <nav class="navbar">
+        <ul class="navigation">
+            <li><a href="featured.html">Featured</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="authors.html">Authors</a></li>
+            <li><a href="bonus.html">Bonus</a></li>
+            <li><a href="about-us.html">About us</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <select id="categoryDropdown">
+            <!-- Category options will be dynamically added here -->
+        </select>
+        <button id="generateQuoteBtn" class="button">Generate Quote</button>
+    </div>
+    <blockquote>
+        <p></p>
+        <cite></cite>
+    </blockquote>
+</body>
+<script src="get-categories.js"></script>
+
 </html>
