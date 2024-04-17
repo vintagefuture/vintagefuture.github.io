@@ -233,6 +233,10 @@ audio {
 #authors-main-div {
     position: absolute;
     top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #authors-list {
@@ -242,11 +246,30 @@ audio {
 
 #authors-list li {
     margin-bottom: 8px;
-    font-size: 18px;
+    font-size: 25px;
     list-style-type: none;
 }
 
 #authors-list li a {
     text-decoration: none;
     color: inherit;
+}
+
+#authors-div {
+    margin-bottom: 20px;
+    max-width: max-content;
+}
+
+#pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+    max-width: 600px;
+}
+
+#pagination a {
+    text-decoration: none;
+    color: black;
+    margin: 0 5px;
 }
