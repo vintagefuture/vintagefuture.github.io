@@ -49,38 +49,6 @@ body {
     background-color: #ccc !important;
 }
 
-@media all and (max-width: 900px) {
-    .navbar {
-        display: flex;
-        vertical-align: middle;
-        left: 1em;
-        margin: 10px;
-    }
-
-    .navbar ul {
-        flex-flow: column wrap;
-        padding: 0;
-    }
-
-    .navbar ul a,
-    li a {
-        text-align: center;
-        padding: 10px;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar li:last-of-type a {
-        border-bottom: none;
-    }
-
-    .quote-div {
-        position: absolute;
-        margin: 10rem;
-        max-width: 80%;
-    }
-}
-
 .quote-div {
     margin: 2rem;
     margin-bottom: 15rem;
@@ -262,16 +230,23 @@ audio {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Style for select dropdown arrow */
-#categoryDropdown::-ms-expand {
-    display: none; /* Hide the default arrow on IE/Edge */
+#authors-main-div {
+    position: absolute;
+    top: 200px;
 }
 
-#categoryDropdown::after {
-    content: "\25BC"; /* Unicode character for the down arrow */
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none; /* Ensure the arrow doesn't interfere with clicking */
+#authors-list {
+    margin: 0;
+    padding: 0;
+}
+
+#authors-list li {
+    margin-bottom: 8px;
+    font-size: 18px;
+    list-style-type: none;
+}
+
+#authors-list li a {
+    text-decoration: none;
+    color: inherit;
 }

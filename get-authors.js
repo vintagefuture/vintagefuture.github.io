@@ -1,38 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // DOM elements
-    const authorsDropdown = document.getElementById("authors");
-    const generateQuoteBtn = document.getElementById("generateQuoteBtn");
-    const quote = document.querySelector("blockquote p");
-    const cite = document.querySelector("blockquote cite");
+    const container = document.getElementById("authors-div");
+    const authorsList = document.getElementById("authors-list");
 
-    async function updateQuote() {
-        const authors = authorsDropdown.value;
-        // Fetch a random quote for the selected category
-        const response = await fetch(`https://api.quotable.io/authors`);
-        const data = await response.json();
-        if (response.ok) {
-            // Update DOM elements
-            quote.textContent = data.content;
-            cite.textContent = data.author;
-        } else {
-            quote.textContent = "An error occurred";
-            console.log(data);
-        }
-    }
+    const desiredRows = 5;
 
     async function populateDropdown() {
         try {
-            // Fetch the list of categories from the Quotable API
-            const response = await fetch("https://api.quotable.io/authors");
+            const response = await fetch(
+                "https://api.quotable.io/authors?sortBy=name&page=2"
+            );
             const data = await response.json();
+            const results = data.results;
 
             if (response.ok) {
-                // Extract category names and populate the dropdown menu
-                data.forEach((author) => {
-                    const option = document.createElement("option");
-                    option.value = author.name;
-                    option.textContent = capitalize(category.name);
-                    authorDropdown.appendChild(option);
+                data.results.forEach((element) => {
+                    const itemCount = results.length;
+                    const numColumns = Math.ceil(itemCount / desiredRows);
+
+                    container.style.columnCount = numColumns;
+
+                    const authorLink = document.createElement("a");
+                    authorLink.textContent = element.name;
+                    authorLink.href = `https://api.quotable.io/random?author=${encodeURIComponent(
+                        element.name
+                    )}`;
+                    const authorListItem = document.createElement("li");
+                    authorListItem.appendChild(authorLink);
+                    authorsList.appendChild(authorListItem);
                 });
             } else {
                 console.error(data);
@@ -42,16 +36,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Attach event listener to the dropdown for change event
-    // categoryDropdown.addEventListener("change", updateQuote);
-
-    // Attach event listener to the button for click event
-    // generateQuoteBtn.addEventListener("click", updateQuote);
-
-    // call populateDropdown once when page loads
     populateDropdown();
 });
-
-const capitalize = (word) => {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-};
