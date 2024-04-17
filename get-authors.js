@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const authorsList = document.getElementById("authors-list");
     const paginationContainer = document.getElementById("pagination");
 
-    const desiredRows = 6;
+    const desiredRows = 5;
 
     async function populateDropdown(pageNumber = 1) {
         try {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const results = data.results;
 
             if (response.ok) {
-                authorsList.innerHTML = ""; // Clear previous list items
+                authorsList.innerHTML = "";
                 data.results.forEach((element) => {
                     const itemCount = results.length;
                     const numColumns = Math.ceil(itemCount / desiredRows);
@@ -25,33 +25,46 @@ document.addEventListener("DOMContentLoaded", () => {
                     authorLink.textContent = element.name;
                     authorLink.href = `https://api.quotable.io/random?author=${encodeURIComponent(
                         element.name
-                    )}`; // Constructing the link with the author's name
-                    authorLink.style.color = "inherit"; // Setting color to inherit to remove default blue color
+                    )}`;
                     const authorListItem = document.createElement("li");
                     authorListItem.appendChild(authorLink);
                     authorsList.appendChild(authorListItem);
                 });
 
-                // Remove margin and padding from the ul element
-                authorsList.style.margin = "0";
-                authorsList.style.padding = "0";
-
                 // Pagination
-                paginationContainer.innerHTML = ""; // Clear previous pagination links
+                paginationContainer.innerHTML = "";
+
+                // Previous page arrow
+                const prevPageLink = document.createElement("a");
+                prevPageLink.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevPageLink.href = `javascript:void(0);`;
+                prevPageLink.addEventListener("click", () => {
+                    populateDropdown(pageNumber - 1);
+                });
+                paginationContainer.appendChild(prevPageLink);
+
+                // Page numbers
                 for (let i = 1; i <= data.totalPages; i++) {
                     const pageLink = document.createElement("a");
                     pageLink.textContent = i;
-                    pageLink.href = `javascript:void(0);`; // Update this with actual pagination link
-                    pageLink.style.color = "inherit"; // Remove default color
-                    pageLink.style.textDecoration = "none"; // Remove default text decoration
+                    pageLink.href = `javascript:void(0);`;
                     if (i > 1) {
-                        pageLink.style.marginLeft = "5px"; // Add some spacing between page numbers
+                        pageLink.style.marginLeft = "10px";
                     }
                     pageLink.addEventListener("click", () => {
                         populateDropdown(i);
                     });
                     paginationContainer.appendChild(pageLink);
                 }
+
+                // Add next page arrow
+                const nextPageLink = document.createElement("a");
+                nextPageLink.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextPageLink.href = `javascript:void(0);`;
+                nextPageLink.addEventListener("click", () => {
+                    populateDropdown(pageNumber + 1);
+                });
+                paginationContainer.appendChild(nextPageLink);
             } else {
                 console.error(data);
             }
