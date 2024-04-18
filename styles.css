@@ -307,7 +307,7 @@ h4 {
 #featured-author {
     display: flex;
     flex-direction: row;
-    max-width: 80%;
+    width: 800px;
     position: absolute;
     top: 180px;
 }
