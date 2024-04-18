@@ -236,7 +236,7 @@ audio {
 
 #authors-main-div {
     position: absolute;
-    top: 200px;
+    top: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -261,15 +261,16 @@ audio {
 
 #authors-div {
     margin-bottom: 20px;
-    max-width: max-content;
+    max-width: 90%;
 }
 
 #pagination {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 100px;
+    top: 307px;
     max-width: 600px;
+    position: absolute;
 }
 
 #pagination a {
