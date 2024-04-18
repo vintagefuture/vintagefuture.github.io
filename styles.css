@@ -134,11 +134,15 @@ body {
 .audio-controls {
     position: fixed;
     bottom: 20px;
-    left: 20px;
+    right: 20px;
 }
 
 audio {
     margin: 20px 0;
+}
+
+#playPauseIcon {
+    font-size: xx-large;
 }
 
 #bonus-main-div {
