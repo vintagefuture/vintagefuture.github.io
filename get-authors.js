@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const authorLink = document.createElement("a");
                     authorLink.textContent = element.name;
+                    authorLink.title = element.bio;
                     authorLink.href = `https://api.quotable.io/random?author=${encodeURIComponent(
                         element.name
                     )}`;
