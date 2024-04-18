@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const desiredRows = 5;
 
-    async function populateDropdown(pageNumber = 1) {
+    async function populateList(pageNumber = 1) {
         try {
             const response = await fetch(
                 `https://api.quotable.io/authors?sortBy=name&page=${pageNumber}`
@@ -40,6 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
                                 document.createElement("button");
                             anotherQuoteButton.textContent = "Get another one";
                             anotherQuoteButton.className = "button";
+                            const backButton = document.createElement("button");
+                            backButton.textContent = "Back";
+                            backButton.className = "button";
+                            backButton.style.marginTop = "5px";
+                            backButton.addEventListener("click", () => {
+                                window.location.href = "./authors.html";
+                            });
 
                             if (authorResponse.ok) {
                                 authorsQuote.textContent = authorData.content;
@@ -48,7 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                 paginationContainer.innerHTML = "";
 
                                 selectedAuthorTitle.textContent = `Random quote by ${authorData.author}`;
-                                authorsMainDiv.appendChild(anotherQuoteButton);
+                                const blockquoteElement =
+                                    document.querySelector("blockquote");
+                                authorsMainDiv.insertBefore(
+                                    anotherQuoteButton,
+                                    blockquoteElement
+                                );
+                                authorsMainDiv.insertBefore(
+                                    backButton,
+                                    blockquoteElement
+                                );
                                 anotherQuoteButton.addEventListener(
                                     "click",
                                     async () => {
@@ -93,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 prevPageLink.innerHTML = '<i class="fas fa-chevron-left"></i>';
                 prevPageLink.href = `javascript:void(0);`;
                 prevPageLink.addEventListener("click", () => {
-                    populateDropdown(pageNumber - 1);
+                    populateList(pageNumber - 1);
                 });
                 paginationContainer.appendChild(prevPageLink);
 
@@ -106,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         pageLink.style.marginLeft = "10px";
                     }
                     pageLink.addEventListener("click", () => {
-                        populateDropdown(i);
+                        populateList(i);
                     });
                     paginationContainer.appendChild(pageLink);
                 }
@@ -116,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 nextPageLink.innerHTML = '<i class="fas fa-chevron-right"></i>';
                 nextPageLink.href = `javascript:void(0);`;
                 nextPageLink.addEventListener("click", () => {
-                    populateDropdown(pageNumber + 1);
+                    populateList(pageNumber + 1);
                 });
                 paginationContainer.appendChild(nextPageLink);
             } else {
@@ -127,5 +143,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    populateDropdown();
+    populateList();
 });
