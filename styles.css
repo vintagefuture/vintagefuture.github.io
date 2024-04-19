@@ -158,10 +158,11 @@ audio {
 }
 
 #about-us-main-div {
-    margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    position: absolute;
+    top: 200px;
 }
 
 .container {
@@ -169,7 +170,7 @@ audio {
 }
 
 .box {
-    width: 500px;
+    width: 420px;
     margin: 0 50px;
 }
 
