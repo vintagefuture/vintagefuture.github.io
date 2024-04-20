@@ -216,6 +216,10 @@ audio {
     text-align: center;
 }
 
+#quoteFrom {
+    font-style: normal;
+}
+
 #dropdown-div {
     display: flex;
     justify-content: center;
@@ -318,6 +322,7 @@ h4 {
     margin-top: 10px;
 }
 
-#featured-today-bio {
+#featured-author-bio {
     font-size: 22px;
+    width: 520px;
 }

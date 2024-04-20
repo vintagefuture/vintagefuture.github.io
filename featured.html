@@ -8,27 +8,6 @@
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet" />
-    <script>
-        const author = "ralph-waldo-emerson";
-        fetch(`https://api.quotable.io/authors/slug/${author}`)
-            .then(response => response.json())
-            .then(data => {
-                const bio = data.bio;
-                const bioParagraph = document.getElementById("featured-today-bio");
-                bioParagraph.textContent = bio;
-
-                const author = data.name;
-                const authorHeading = document.getElementById("author-heading");
-                authorHeading.textContent = author;
-
-                const description = data.description;
-                const featuredSubheading = document.getElementById("featured-subheading");
-                featuredSubheading.textContent = description;
-            })
-            .catch(error => {
-                console.error("Error fetching author bio:", error);
-            });
-    </script>
 </head>
 
 <body>
@@ -45,14 +24,15 @@
     <article id="featured-author">
         <figure class="profile-image">
             <img src="https://images.quotable.dev/profile/200/ralph-waldo-emerson.jpg" alt="ralph-waldo-emerson">
-            <button class="button">Get random quote</button>
+            <button id="featured-author-button" class="button">Get random quote</button>
         </figure>
         <div id="author-content">
             <h1 id="author-heading"></h1>
             <h4 id="featured-subheading"></h4>
-            <p id="featured-today-bio"></p>
+            <p id="featured-author-bio"></p>
         </div>
     </article>
 </body>
+<script src="get-featured.js"></script>
 
 </html>
