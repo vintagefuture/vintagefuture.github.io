@@ -7,54 +7,99 @@ document.addEventListener("DOMContentLoaded", () => {
         "selected-author-title"
     );
     const authorsMainDiv = document.getElementById("authors-main-div");
-
     const desiredRows = 5;
 
     async function populateList(pageNumber = 1) {
         try {
+            // Get the list of authors
             const response = await fetch(
                 `https://api.quotable.io/authors?sortBy=name&page=${pageNumber}`
             );
             const data = await response.json();
             const results = data.results;
 
+            fetch(
+                `https://api.quotable.io/authors?sortBy=name&page=${pageNumber}`
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    const results = data.results;
+                })
+                .catch((error) => {
+                    console.error(
+                        "There was a problem with the fetch operation:",
+                        error
+                    );
+                });
+
             if (response.ok) {
                 authorsList.innerHTML = "";
-                data.results.forEach((element) => {
+                results.forEach((element) => {
+                    // Calculate the number of columns necessary for each page
                     const itemCount = results.length;
                     const numColumns = Math.ceil(itemCount / desiredRows);
-
                     container.style.columnCount = numColumns;
 
+                    // Create a hyperlink for each author
                     const authorLink = document.createElement("a");
                     authorLink.textContent = element.name;
                     authorLink.title = element.bio;
-                    authorLink.href = `https://api.quotable.io/random?author=${encodeURIComponent(
-                        element.name
-                    )}`;
+                    authorLink.href = `https://api.quotable.io/random?author=${element.slug}`;
+
+                    // Add the link to the existing unordered list
+                    const authorListItem = document.createElement("li");
+                    authorListItem.appendChild(authorLink);
+                    authorsList.appendChild(authorListItem);
+
+                    // Re-render the page when clicking on an author
                     authorLink.addEventListener("click", async (event) => {
                         event.preventDefault();
-                        try {
-                            const authorResponse = await fetch(authorLink.href);
-                            const authorData = await authorResponse.json();
-                            const anotherQuoteButton =
-                                document.createElement("button");
-                            anotherQuoteButton.textContent = "Get another one";
-                            anotherQuoteButton.className = "button";
-                            const backButton = document.createElement("button");
-                            backButton.textContent = "Back";
-                            backButton.className = "button";
-                            backButton.style.marginTop = "5px";
-                            backButton.addEventListener("click", () => {
-                                window.location.href = "./authors.html";
-                            });
 
-                            if (authorResponse.ok) {
-                                authorsQuote.textContent = authorData.content;
+                        fetch(authorLink.href)
+                            .then((authorResponse) => authorResponse.json())
+                            .then((authorData) => {
+                                // Add another quote button
+                                const anotherQuoteButton =
+                                    document.createElement("button");
+                                anotherQuoteButton.textContent =
+                                    "Get another one";
+                                anotherQuoteButton.className = "button";
+                                anotherQuoteButton.addEventListener(
+                                    "click",
+                                    () => {
+                                        fetch(
+                                            `https://api.quotable.io/random?author=${element.slug}`
+                                        )
+                                            .then((randomQuoteResponse) =>
+                                                randomQuoteResponse.json()
+                                            )
+                                            .then((randomQuoteData) => {
+                                                authorsQuote.textContent = "";
+                                                authorsQuote.textContent =
+                                                    randomQuoteData.content;
+                                            })
+                                            .catch((error) => {
+                                                console.error(error);
+                                            });
+                                    }
+                                );
 
+                                // Add back button
+                                const backButton =
+                                    document.createElement("button");
+                                backButton.textContent = "Back";
+                                backButton.className = "button";
+                                backButton.style.marginTop = "5px";
+                                backButton.addEventListener("click", () => {
+                                    window.location.href = "./authors.html";
+                                });
+
+                                // Clears out previous content
                                 container.innerHTML = "";
                                 paginationContainer.innerHTML = "";
 
+                                // Fills the page with selected author's random quote
+                                authorsQuote.textContent = authorData.content;
                                 selectedAuthorTitle.textContent = `Random quote by ${authorData.author}`;
                                 const blockquoteElement =
                                     document.querySelector("blockquote");
@@ -66,40 +111,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                     backButton,
                                     blockquoteElement
                                 );
-                                anotherQuoteButton.addEventListener(
-                                    "click",
-                                    async () => {
-                                        try {
-                                            const randomQuoteResponse =
-                                                await fetch(
-                                                    `https://api.quotable.io/random?author=${encodeURIComponent(
-                                                        authorData.author
-                                                    )}`
-                                                );
-                                            const randomQuoteData =
-                                                await randomQuoteResponse.json();
-                                            if (randomQuoteResponse.ok) {
-                                                authorsQuote.textContent = "";
-                                                authorsQuote.textContent =
-                                                    randomQuoteData.content;
-                                            } else {
-                                                console.error(randomQuoteData);
-                                            }
-                                        } catch (error) {
-                                            console.error(error);
-                                        }
-                                    }
-                                );
-                            } else {
-                                console.error(authorData);
-                            }
-                        } catch (error) {
-                            console.error(error);
-                        }
+                            })
+                            .catch((error) => {
+                                console.error(error);
+                            });
                     });
-                    const authorListItem = document.createElement("li");
-                    authorListItem.appendChild(authorLink);
-                    authorsList.appendChild(authorListItem);
                 });
 
                 // Pagination
@@ -119,9 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const pageLink = document.createElement("a");
                     pageLink.textContent = i;
                     pageLink.href = `javascript:void(0);`;
-                    if (i > 1) {
-                        pageLink.style.marginLeft = "10px";
-                    }
+                    pageLink.style.marginLeft = "10px";
                     pageLink.addEventListener("click", () => {
                         populateList(i);
                     });
