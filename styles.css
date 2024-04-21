@@ -14,6 +14,7 @@ body {
     line-height: 1.5;
 }
 
+/* Navigation bar */
 .navbar {
     position: absolute;
     top: 50px;
@@ -49,24 +50,11 @@ body {
     background-color: #ccc !important;
 }
 
-.quote-div {
-    margin: 2rem;
-    margin-bottom: 15rem;
-    position: absolute;
-    top: 192px;
-    width: 807px;
-}
-
+/* Common selectors */
 .button-div {
     display: flex;
     justify-content: center;
     margin-bottom: 10%;
-}
-
-.bonus-button-div {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20%;
 }
 
 .button {
@@ -81,8 +69,12 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.quote-button {
-    min-width: auto;
+.quote-div {
+    margin: 2rem;
+    margin-bottom: 15rem;
+    position: absolute;
+    top: 192px;
+    width: 807px;
 }
 
 .quote {
@@ -98,65 +90,18 @@ body {
     font-style: normal;
 }
 
-.categories {
-    display: block;
-}
-
-#player {
-    border-radius: 12px;
-    width: 80%;
-}
-
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.column {
-    width: 33.33%;
-    padding: 1px;
-    box-sizing: border-box;
-}
-
-#columnsContainer {
-    width: 500px;
-    height: 500px;
-}
-
+/* Audio player */
 .audio-controls {
     position: fixed;
     bottom: 20px;
     right: 20px;
 }
 
-audio {
-    margin: 20px 0;
-}
-
 #playPauseIcon {
     font-size: xx-large;
 }
 
-#bonus-main-div {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 192px;
-}
-
-.blockquote-footer {
-    font-style: normal;
-    text-align: center;
-}
-
+/* About us page */
 #about-us-main-div {
     display: flex;
     justify-content: space-evenly;
@@ -203,15 +148,20 @@ audio {
     color: #858282 !important;
 }
 
+/* Bonus page */
+#bonus-main-div {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 192px;
+}
+
 .bonus-div {
     width: 450px;
     margin: 2rem;
 }
 
-#dad-joke {
-    text-align: center;
-}
-
+#dad-joke,
 #movie-quote {
     text-align: center;
 }
@@ -220,6 +170,18 @@ audio {
     font-style: normal;
 }
 
+.blockquote-footer {
+    font-style: normal;
+    text-align: center;
+}
+
+.bonus-button-div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20%;
+}
+
+/* Categories page */
 #dropdown-div {
     display: flex;
     justify-content: center;
@@ -239,6 +201,7 @@ audio {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+/* Authors page */
 #authors-main-div {
     position: absolute;
     top: 160px;
@@ -269,6 +232,20 @@ audio {
     max-width: 90%;
 }
 
+#authors-quote {
+    width: 807px;
+}
+
+#author-content {
+    line-height: normal;
+}
+
+#author-content h1,
+h4 {
+    line-height: 0.5rem;
+}
+
+/* Authors pagination */
 #pagination {
     display: flex;
     flex-wrap: wrap;
@@ -284,28 +261,7 @@ audio {
     margin: 0 5px;
 }
 
-#authors-quote {
-    width: 807px;
-}
-
-#author-content {
-    line-height: normal;
-}
-
-#author-content h1,
-h4 {
-    line-height: 0.5rem;
-}
-
-.author-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    /* max-width: 80%; */
-}
-
+/* Featured page */
 #featured-author p {
     text-align: justify;
 }
