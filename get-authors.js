@@ -10,29 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const desiredRows = 5;
 
     async function populateList(pageNumber = 1) {
-        try {
-            // Get the list of authors
-            const response = await fetch(
-                `https://api.quotable.io/authors?sortBy=name&page=${pageNumber}`
-            );
-            const data = await response.json();
-            const results = data.results;
-
-            fetch(
-                `https://api.quotable.io/authors?sortBy=name&page=${pageNumber}`
-            )
-                .then((response) => response.json())
-                .then((data) => {
-                    const results = data.results;
-                })
-                .catch((error) => {
-                    console.error(
-                        "There was a problem with the fetch operation:",
-                        error
-                    );
-                });
-
-            if (response.ok) {
+        // Get the list of authors
+        fetch(`https://api.quotable.io/authors?sortBy=name&page=${pageNumber}`)
+            .then((response) => response.json())
+            .then((data) => {
+                const results = data.results;
                 authorsList.innerHTML = "";
                 results.forEach((element) => {
                     // Calculate the number of columns necessary for each page
@@ -70,16 +52,17 @@ document.addEventListener("DOMContentLoaded", () => {
                                         fetch(
                                             `https://api.quotable.io/random?author=${element.slug}`
                                         )
-                                            .then((randomQuoteResponse) =>
-                                                randomQuoteResponse.json()
-                                            )
-                                            .then((randomQuoteData) => {
+                                            .then((response) => response.json())
+                                            .then((data) => {
                                                 authorsQuote.textContent = "";
                                                 authorsQuote.textContent =
-                                                    randomQuoteData.content;
+                                                    data.content;
                                             })
                                             .catch((error) => {
-                                                console.error(error);
+                                                console.error(
+                                                    `There was a problem retrieving the random quote for ${element.name}: `,
+                                                    error
+                                                );
                                             });
                                     }
                                 );
@@ -113,7 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                 );
                             })
                             .catch((error) => {
-                                console.error(error);
+                                console.error(
+                                    `There was a problem retrieving the random quote for ${element.name}: `,
+                                    error
+                                );
                             });
                     });
                 });
@@ -126,7 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 prevPageLink.innerHTML = '<i class="fas fa-chevron-left"></i>';
                 prevPageLink.href = `javascript:void(0);`;
                 prevPageLink.addEventListener("click", () => {
-                    populateList(pageNumber - 1);
+                    if (pageNumber > 1) {
+                        populateList(pageNumber - 1);
+                    }
                 });
                 paginationContainer.appendChild(prevPageLink);
 
@@ -147,15 +135,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 nextPageLink.innerHTML = '<i class="fas fa-chevron-right"></i>';
                 nextPageLink.href = `javascript:void(0);`;
                 nextPageLink.addEventListener("click", () => {
-                    populateList(pageNumber + 1);
+                    if (pageNumber < data.totalPages) {
+                        populateList(pageNumber + 1);
+                    }
                 });
                 paginationContainer.appendChild(nextPageLink);
-            } else {
-                console.error(data);
-            }
-        } catch (error) {
-            console.error(error);
-        }
+            })
+            .catch((error) => {
+                console.error(
+                    "There was a problem retrieving the list of authors: ",
+                    error
+                );
+            });
     }
 
     populateList();
