@@ -1,12 +1,3 @@
-backend:
-  name: github
-  repo: vintagefuture/vintagefuture.github.io
-  branch: main
-  base_url: https://api.netlify.com
-
-media_folder: public/uploads/events
-public_folder: /uploads/events
-
 collections:
   - name: events
     label: Events
