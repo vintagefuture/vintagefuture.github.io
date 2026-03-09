@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: vintagefuture/vintagefuture.github.io
+  branch: main
+
+media_folder: public/uploads/events
+public_folder: /uploads/events
+
+collections:
+  - name: events
+    label: Events
+    folder: src/content/events
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title,                 name: title,                widget: string }
+      - { label: Start Date,            name: date,                 widget: datetime, format: "YYYY-MM-DD" }
+      - { label: End Date,              name: endDate,              widget: datetime, format: "YYYY-MM-DD" }
+      - { label: Time,                  name: time,                 widget: string,   hint: "e.g. 9:00 AM - 3:00 PM" }
+      - { label: Location,              name: location,             widget: string }
+      - { label: Image,                 name: image,                widget: image }
+      - { label: Summary,               name: summary,              widget: text }
+      - { label: Tags,                  name: tags,                 widget: list }
+      - { label: Registration Required, name: registrationRequired, widget: boolean,  default: false }
+      - { label: Registration Link,     name: registrationLink,     widget: string,   required: false }
+      - { label: Draft,                 name: draft,                widget: boolean,  default: false }
+      - { label: Body,                  name: body,                 widget: markdown }
