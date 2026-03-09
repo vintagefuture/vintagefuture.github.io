@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com', // Replace with your site URL
+  site: 'https://vintagefuture.github.io', // Replace with your site URL
   integrations: [
     tailwind(),
     sitemap(),
