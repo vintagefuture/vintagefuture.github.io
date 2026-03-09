@@ -1,35 +1,27 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
       colors: {
+        // Red color replaces the blue primary
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+          50: '#fef4f4',
+          100: '#fde6e5',
+          200: '#fbd1cf',
+          300: '#f7adaa',
+          400: '#f17d78',
+          500: '#da524c', // Your base red
+          600: '#c73c36',
+          700: '#a72f2a',
+          800: '#8a2a26',
+          900: '#732724',
+          950: '#3f1110',
         },
-        secondary: {
-          50: '#faf5ff',
-          100: '#f3e8ff',
-          200: '#e9d5ff',
-          300: '#d8b4fe',
-          400: '#c084fc',
-          500: '#a855f7',
-          600: '#9333ea',
-          700: '#7c3aed',
-          800: '#6b21a8',
-          900: '#581c87',
-          950: '#3b0764',
-        },
+        // Complete black for secondary
+        secondary: '#000000', 
         accent: {
           50: '#fff7ed',
           100: '#ffedd5',
@@ -45,8 +37,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Source Sans Pro"', 'system-ui', 'sans-serif'],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        anton: ['Anton', 'sans-serif'],
       },
     },
   },
