@@ -2,14 +2,15 @@
 layout: cv
 title: Isaac Newtons's CV
 ---
-# Isaac Newton
-Physicist, Mathematician, Cambridge professor.
+# Giacomo Scarabicchi
+Software engineer
 
 <div id="webaddress">
-<a href="isaac@applesdofall.org">isaac@applesdofall.org</a>
-| <a href="http://en.wikipedia.org/wiki/Isaac_Newton">My wikipedia page</a>
+<a href="scarabicchi@gmail.com">scarabicchi@gmail.com</a>
+| <a href="https://github.com/vintagefuture">My Github</a>
 </div>
 
+Versatile software engineer with a strong frontend background and full-stack exposure across backend, infrastructure and DevOps. Very interested in building beautiful, accessible interfaces and in refactoring legacy code. Recent work includes re-engineering a complex date range picker using React Aria and migrating from Moment.js to the @internationalized/date library. Comfortable owning the full path from proof-of-concept to deployment, with hands-on experience in AWS, Docker, and CI/CD pipelines. Looking for a product-focused engineering team that cares about doing things the right way.
 
 ## Currently
 
