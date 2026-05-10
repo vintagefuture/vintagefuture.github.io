@@ -1,92 +1,27 @@
 ---
 layout: cv
-title: Isaac Newtons's CV
+title: Giacomo Scarabicchi's CV
 ---
 # Giacomo Scarabicchi
-Software engineer
 
-<div id="webaddress">
-<a href="scarabicchi@gmail.com">scarabicchi@gmail.com</a>
-| <a href="https://github.com/vintagefuture">My Github</a>
-</div>
+[scarabicchi@gmail.com](scarabicchi@gmail.com) | [My Github](https://github.com/vintagefuture)
 
-Versatile software engineer with a strong frontend background and full-stack exposure across backend, infrastructure and DevOps. Very interested in building beautiful, accessible interfaces and in refactoring legacy code. Recent work includes re-engineering a complex date range picker using React Aria and migrating from Moment.js to the @internationalized/date library. Comfortable owning the full path from proof-of-concept to deployment, with hands-on experience in AWS, Docker, and CI/CD pipelines. Looking for a product-focused engineering team that cares about doing things the right way.
+I'm a versatile software engineer with a strong frontend background and full-stack exposure across backend, infrastructure and DevOps. I like building beautiful, accessible interfaces and refactoring legacy code. Some of my recent work includes re-engineering a complex date range picker using React Aria and migrating from Moment.js to the @internationalized/date library. I feel comfortable owning the full path from proof-of-concept to deployment, and I have hands-on experience in AWS, Docker, and CI/CD pipelines. I'm looking for a product-focused engineering team that cares about doing things the right way.
 
-## Currently
+## Experience
 
-Standing on the shoulders of giants
+### Software Engineer (Frontend & DevOps)
 
-### Specialized in
+Nucleus Financial *(2022 - present)*
 
-Laws of motion, gravitation, minting coins, disliking [Robert Hooke](http://en.wikipedia.org/wiki/Robert_Hooke)
+Worked across frontend and infrastructure in a small engineering team, taking ownership of both product development of core financial tools and deployment pipeline.
 
+- Re-engineered a complex dual-calendar date range picker using React Aria hooks, keeping the same look and feel as the original implementation.
 
-### Research interests
+- Replaced Moment.js across the stack with @internationalized/date, ensuring no regressions were introduced.
 
-Cooling, power series, optics, alchemy, planetary motions, apples.
+- Set up the full development cycle for the company's Drupal sites using a Jenkins CI/CD pipeline triggered by Gerrit code review events, provisioning ephemeral environments on AWS ECS Fargate — allowing proper code review and stakeholder testing where none previously existed.
 
+- Introduced React and TypeScript into a Drupal codebase to build a booking form embedded inside a Bootstrap modal, setting up the full JS environment from scratch including package.json, webpack config, and unit tests. Built a custom Drupal PHP module to bridge front and backend, with AWS SES handling email delivery.
 
-## Education
-
-`1654-1660`
-__The King's School, Grantham.__
-
-`June 1661 - now`
-__Trinity College, Cambridge__
-
-- Sizar
-
-`1667 - death`
-__Trinity College, Cambridge__
-
-- Fellow
-
-
-
-## Awards
-
-`2012`
-President, *Royal Society*, London, UK
-
-Associate, *French Academy of Science*, Paris, France
-
-
-
-## Publications
-
-<!-- A list is also available [online](http://scholar.google.co.uk/citations?user=LTOTl0YAAAAJ) -->
-
-### Journals
-
-`1669`
-Newton Sir I, De analysi per æquationes numero terminorum infinitas. 
-
-`1669`
-Lectiones opticæ.
-
-etc. etc. etc.
-
-### Patents
-
-`2012`
-Infinitesimal calculus for solutions to physics problems, [SMBC](http://www.techdirt.com/articles/20121011/09312820678/if-patents-had-been-around-time-newton.shtml) patent 001
-
-
-## Occupation
-
-`1600`
-__Royal Mint__, London
-
-- Warden
-- Minted coins
-
-`1600`
-__Lucasian professor of Mathematics__, Cambridge University
-
-
-
-<!-- ### Footer
-
-Last updated: May 2013 -->
-
-
+- Occasional backend work in Java and Node.js, including API modifications and a PDF generation service.
